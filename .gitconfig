@@ -40,7 +40,7 @@
     # List git aliases
     alias = config --get-regexp alias
     # Show all branches, local and remote
-    branch = branch -ra
+    br = branch -ra
     # Cleaned up pretty log
     ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n\\ \\ %Creset%s%C(cyan)\\ [%cN]" --decorate --date=local
     # Same pretty log, with changed file list
