@@ -42,9 +42,9 @@
     # Show all branches, local and remote
     br = branch -ra
     # Cleaned up pretty log
-    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n\\ \\ %Creset%s%C(cyan)\\ [%cN]" --decorate --date=local
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n%Creset%s%C(cyan)\\ [%cN]" --decorate --date=local
     # Same pretty log, with changed file list
-    lf = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n\\ \\ %Creset%s%C(cyan)\\ [%cN]" --decorate --date=local --numstat
+    lf = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n%Creset%s%C(cyan)\\ [%cN]" --decorate --date=local --numstat
     # Show files flagged --assume-unchanged
     unchanged = !git ls-files -v | grep "^[[:lower:]]"
     # Show the history of a file, with diffs
