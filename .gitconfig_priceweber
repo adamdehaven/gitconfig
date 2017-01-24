@@ -1,0 +1,75 @@
+# core {{{
+[core]
+    editor = vim
+    autocrlf = false
+#}}}
+# user {{{
+[user]
+    name = Adam DeHaven
+    email = adehaven@priceweber.com
+#}}}
+# color {{{
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = cyan reverse bold
+    local = cyan
+    remote = green
+
+[color "diff"]
+    meta = cyan bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    plain = white
+
+[color "status"]
+    added = cyan
+    changed = yellow
+    untracked = red bold
+#}}}
+# push/pull/diff/options {{{
+[push]
+    default = simple
+#}}}
+# alias {{{
+[alias]
+    # List git aliases
+    alias = config --get-regexp alias
+    # Show all branches, local and remote
+    br = branch -ra
+    # Cleaned up pretty log
+    ls = log --pretty=tformat:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n%Creset%w(80,4,4)%s%b\\ %C(cyan)[%cN]%n" --decorate --date=local
+    # Same pretty log, with changed file list
+    lf = log --pretty=tformat:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %n%Creset%w(80,4,4)%s%b\\ %C(cyan)[%cN]%n" --decorate --date=local --numstat
+    # Show files flagged --assume-unchanged
+    unchanged = !git ls-files -v | grep "^[[:lower:]]"
+    # Show the history of a file, with diffs
+    filelog = log -u
+    # Find a file path in codebase
+    findpath = "!git ls-files | grep -i"
+    # Search/grep your entire codebase for a string
+    search = grep -Ii
+#}}}
+
+[url "https://github.com/"]
+    insteadOf = github:
+[url "https://gist.github.com/"]
+    insteadOf = gist:
+[url "https://bitbucket.org/"]
+    insteadOf = bitbucket:
+
+[log]
+    mailmap = true
+
+[mailmap]
+    file = ~/.mailmap
+
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
