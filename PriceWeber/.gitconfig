@@ -70,13 +70,6 @@
     
 #}}}
 
-[url "https://github.com/"]
-    insteadOf = github:
-[url "https://gist.github.com/"]
-    insteadOf = gist:
-[url "https://bitbucket.org/"]
-    insteadOf = bitbucket:
-
 [log]
     mailmap = true
 
